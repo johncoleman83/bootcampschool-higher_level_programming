@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 -mpy_compile $PYFILE
+cp __pycache__/`ls -1t __pycache__/ | head -1` ./$PYFILE'c'
