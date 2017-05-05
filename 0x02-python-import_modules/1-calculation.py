@@ -6,9 +6,9 @@ def main():
     a = 10
     b = 5
     sym = ['+', '-', '*', '/']
-    op = [add(a, b), sub(a, b), mul(a, b), div(a, b)]
-    for i in range(0, 4):
-        print('{:d} {:} {:d} = {:d}'.format(a, sym[i], b, op[i]))
+    op = {0:add, 1:sub, 2:mul, 3:div}
+    for i in op:
+        print('{:d} {:} {:d} = {:d}'.format(a, sym[i], b, op[i](a, b)))
 
 if __name__ == "__main__":
     main()
