@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 
-def 
+def delete_at(my_list=[], idx=0):
+
+    
