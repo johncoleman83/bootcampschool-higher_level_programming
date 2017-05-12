@@ -6,7 +6,7 @@ a = []
 b = ['hi', 'there', 'how', 'are', 'you']
 c = [my_list, a, b]
 d = [(5, 3, 6), 66, "string"]
-e = [(1, 2), (4, 5)]
+e = [None, (4, 5)]
 f = [5]
 nb_print = safe_print_list(my_list, 2)
 print("nb_print: {:d}".format(nb_print))
