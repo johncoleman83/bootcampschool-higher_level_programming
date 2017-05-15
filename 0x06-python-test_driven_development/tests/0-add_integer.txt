@@ -1,1 +1,14 @@
+>>> add_integer = __import__('0-add_integer').add_integer
 
+
+>>> add_integer(8.0, 5)
+13
+
+>>> add_integer('hi', 6)
+a must be an integer
+
+>>> add_integer(6, 'yo')
+b must be an integer
+
+>>> add_integer(999999999999, 1)
+1000000000000
