@@ -5,10 +5,14 @@
 13
 
 >>> add_integer('hi', 6)
-a must be an integer
+Traceback (most recent call last):
+		  ...
+TypeError: a must be an integer
 
 >>> add_integer(6, 'yo')
-b must be an integer
+Traceback (most recent call last):
+		  ...
+TypeError: b must be an integer
 
 >>> add_integer(999999999999, 1)
 1000000000000
