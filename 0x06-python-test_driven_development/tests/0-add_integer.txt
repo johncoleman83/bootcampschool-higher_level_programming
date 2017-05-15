@@ -1,27 +1,32 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
-
+# float and int
 >>> add_integer(8.0, 5)
 13
 
+# string and int
 >>> add_integer('hi', 6)
 Traceback (most recent call last):
 		  ...
 TypeError: a must be an integer
 
+# int and string
 >>> add_integer(6, 'yo')
 Traceback (most recent call last):
 		  ...
 TypeError: b must be an integer
 
+# large int
 >>> add_integer(999999999999, 1)
 1000000000000
 
+# test None
 >>> add_integer(None, None)
 Traceback (most recent call last):
 		  ...
 TypeError: a must be an integer
 
+# Test Booleans
 >>> add_integer(True, 45)
 46
 
