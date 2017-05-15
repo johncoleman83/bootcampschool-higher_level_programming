@@ -16,3 +16,14 @@ TypeError: b must be an integer
 
 >>> add_integer(999999999999, 1)
 1000000000000
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+		  ...
+TypeError: a must be an integer
+
+>>> add_integer(True, 45)
+46
+
+>>> add_integer(False, True)
+1
