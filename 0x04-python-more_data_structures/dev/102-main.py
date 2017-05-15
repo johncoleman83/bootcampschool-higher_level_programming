@@ -5,11 +5,15 @@ print_sorted_dictionary = \
 
 my_dict = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
 new_dict = complex_delete(my_dict, 'C')
+a = complex_delete(my_dict, 'testingitout')
+b = complex_delete(my_dict, None)
 print_sorted_dictionary(my_dict)
 print("--")
 print_sorted_dictionary(new_dict)
-
 print("--")
+print_sorted_dictionary(a)
+print('--')
+print_sorted_dictionary(b)
 print("--")
 new_dict = complex_delete(my_dict, 'c_is_fun')
 print_sorted_dictionary(my_dict)
