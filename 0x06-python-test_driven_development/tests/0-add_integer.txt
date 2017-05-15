@@ -32,3 +32,15 @@ TypeError: a must be an integer
 
 >>> add_integer(False, True)
 1
+
+# no arguments
+>>> add_integer()
+Traceback (most recent call last):
+		  ...
+TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+# extra args
+>>> add_integer(6, 2, "well hello there")
+Traceback (most recent call last):
+		  ...
+TypeError: add_integer() takes 2 positional arguments but 3 were given
