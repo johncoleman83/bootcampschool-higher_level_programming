@@ -51,3 +51,9 @@ TypeError: print_square() missing 1 required positional argument: 'size'
 Traceback (most recent call last):
 		  ...
 TypeError: print_square() takes 1 positional argument but 2 were given
+
+# print_square 'string'
+>>> print_square('string')
+Traceback (most recent call last):
+		  ...
+TypeError: size must be an integer
