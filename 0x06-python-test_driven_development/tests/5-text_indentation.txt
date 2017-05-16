@@ -1,6 +1,6 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# test long string
+# long string
 >>> text_indentation('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.')
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 <BLANKLINE>
@@ -31,7 +31,7 @@ Quae animi affectio suum cuique tribuens atque hanc, quam dico.
 Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.
 <BLANKLINE>
 
-# test multiple spaces at end and beginning of newlined
+# multiple spaces at end and beginning of newlined
 >>> text_indentation('   hi.      how   ?  you:    Lisa')
 hi.
 <BLANKLINE>
@@ -41,7 +41,7 @@ you:
 <BLANKLINE>
 Lisa
 
-# test all ......
+# all ......
 >>> text_indentation('.......')
 .
 <BLANKLINE>
@@ -58,7 +58,7 @@ Lisa
 .
 <BLANKLINE>
 
-# test no subs, but newlines
+# no subs, but newlines
 >>> text_indentation('   hi  \n  how  \n  are  \n  you:  Bobby?')
 hi
 how
@@ -68,7 +68,7 @@ you:
 Bobby?
 <BLANKLINE>
 
-# test non string
+# non string
 >>> text_indentation(45)
 Traceback (most recent call last):
 		  ...
@@ -77,6 +77,12 @@ TypeError: text must be a string
 # no punctuation marks
 >>> text_indentation("there is no punctuation here")
 there is no punctuation here
+
+# input None
+>>> text_indentation(None)
+Traceback (most recent call last):
+		  ...
+TypeError: text must be a string
 
 # no args
 >>> text_indentation()
