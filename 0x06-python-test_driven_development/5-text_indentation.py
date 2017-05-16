@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+module to remove whitespace and add newlines to text
+"""
+
+
 def text_indentation(text):
+    """ removes whitespace at start & end of each line and adds newlines"""
     if not isinstance(text, str):
         raise TypeError('text must be a string')
     for c in ['.', '?', ':']:

@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+module to print a square
+"""
+
+
 def print_square(size):
+    """prints square of '#' of 'size' dimensions"""
     if isinstance(size, int):
         if size >= 0:
             for row in range(size):
