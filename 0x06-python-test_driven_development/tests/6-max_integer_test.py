@@ -5,37 +5,35 @@ Unittest for max_integer([..])
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
-def real_max_integer(list=[]):
-    """Function to find and return the max integer in a list of integers
-        If the list is empty, the function returns None
-    """
-    if len(list) == 0:
-        return None
-    result = list[0]
-    i = 1
-    while i < len(list):
-        if list[i] > result:
-            result = list[i]
-        i += 1
-    return result
-
 
 class TestMaxInteger(unittest.TestCase):
 
-    def test_max_integer(self):
+
+    def test_variable(self):
         a = 77
-        testslist = [
-            [1, 2, 3, 4],
-            [1, 3, 4, 2],
-            None,
-            55,
-            "stringtest",
-            ["hi", 6, a],
-            [a, a, a],
-            [1, 2, 3, [4, 5, 6], [4, 5, 6]]
-            ]
-        for i in testslist:
-            self.assertEqual(max_integer(i), real_max_integer(i))
+        self.assertEqual(max_integer([a]), a)
+
+
+    def test_multiple_variables(self):
+        a = 99
+        self.assertEqual(max_integer([a, a, a]), a)
+
+
+    def test_regular_ints(self):
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+
+
+    def test_unsorted_ints(self):
+        self.assertEqual(max_integer([2, 1, 4, 3]), 4)
+
+
+    def test_large_int(self):
+        self.assertEqual(max_integer([999999999999999]), 999999999999999)
+
+
+    def test_large_small(self):
+        self.assertEqual(max_integer([1, 999999999999999]), 999999999999999)
+
 
 if __name__ == '__main__':
     unittest.main()
