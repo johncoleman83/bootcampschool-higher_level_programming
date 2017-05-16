@@ -7,13 +7,11 @@
 ####
 
 >>> print_square(0)
-<BLANKLINE>
 
 >>> print_square(True)
 #
 
 >>> print_square(False)
-<BLANKLINE>
 
 >>> print_square(-1)
 Traceback (most recent call last):
