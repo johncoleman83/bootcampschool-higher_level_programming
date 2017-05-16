@@ -35,5 +35,20 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 999999999999999]), 999999999999999)
 
 
+    @unittest.expectedFailure
+    def test_string_in_list(self):
+        self.assertEqual(max_integer(["hi", 1, 2, 3]), 3)
+
+
+    @unittest.expectedFailure
+    def test_no_args(self):
+        self.assertEqual(max_integer(), 3)
+
+
+    @unittest.expectedFailure
+    def test_string(self):
+        self.assertEqual(max_integer("hello there"), 5)
+
+
 if __name__ == '__main__':
     unittest.main()
