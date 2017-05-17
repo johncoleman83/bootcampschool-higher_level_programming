@@ -11,6 +11,28 @@
 >>> print(matrix_divided(matrix, 1.5))
 [[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
 
+# not list of ints, divide by int
+>>> print(matrix_divided([[4, 'hi', 8], ['hi', 'h', 'i']], 1))
+Traceback (most recent call last):
+		  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# missing 1 arg
+>>> print(matrix_divided(matrix))
+Traceback (most recent call last):
+		  ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# missing both args
+>>> print(matrix_divided())
+Traceback (most recent call last):
+		  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+# divide by all 0's
+>>> print(matrix_divided([[0, 0, 0], [0, 0, 0]], float(5)))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
 # divide by "hi"
 >>> print(matrix_divided(matrix, "Hi"))
 Traceback (most recent call last):

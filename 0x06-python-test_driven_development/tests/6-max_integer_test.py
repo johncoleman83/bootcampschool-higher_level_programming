@@ -34,10 +34,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_atuples(self):
         self.assertEqual(max_integer((1, 99, 5, 8)), 99)
 
-    def test_large_int(self):
-        self.assertEqual(max_integer([999999999999999]), 999999999999999)
+    def test_large_intbeg(self):
+        self.assertEqual(max_integer([999999999999999, 1]), 999999999999999)
 
-    def test_large_small(self):
+    def test_large_smallbeg(self):
         self.assertEqual(max_integer([1, 999999999999999]), 999999999999999)
 
     def test_boolean(self):
