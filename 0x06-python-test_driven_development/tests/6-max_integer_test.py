@@ -40,6 +40,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_none_in_list(self):
         self.assertIsNone(max_integer([None]))
 
+    def test_astring(self):
+        self.assertEqual(max_integer("a crazy string here!"), 'z')
+
 
 class ExpectedFailureTestCase(unittest.TestCase):
 
@@ -74,10 +77,6 @@ class ExpectedFailureTestCase(unittest.TestCase):
     @unittest.expectedFailure
     def test_no_args(self):
         self.assertEqual(max_integer(), 3)
-
-    @unittest.expectedFailure
-    def test_string(self):
-        self.assertEqual(max_integer("hello there"), 5)
 
 if __name__ == '__main__':
     unittest.main()
