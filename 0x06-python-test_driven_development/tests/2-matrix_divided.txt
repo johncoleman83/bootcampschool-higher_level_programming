@@ -29,8 +29,8 @@ Traceback (most recent call last):
 		  ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
-# divide by all 0's
->>> print(matrix_divided([[0, 0, 0], [0, 0, 0]], float(5)))
+# divide by float(inf)
+>>> print(matrix_divided([[9, 8, 7], [99, 88, 77]], float('inf')))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 # divide by "hi"
