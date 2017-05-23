@@ -1,4 +1,4 @@
->>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('add_integer_6').add_integer
 
 # float and int
 >>> add_integer(8.0, 5)
