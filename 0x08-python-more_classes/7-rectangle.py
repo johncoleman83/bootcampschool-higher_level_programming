@@ -54,6 +54,7 @@ class Rectangle:
         return p
 
     def __str__(self):
+        """returns representation of rectangle with print_symbol"""
         s = ''
         if self.__width != 0 and self.__height != 0:
             for h in range(self.__height):
@@ -61,8 +62,10 @@ class Rectangle:
         return s
 
     def __repr__(self):
+        """returns string representation of Rectangle"""
         return 'Rectangle({:d}, {:d})'.format(self.__width, self.__height)
 
     def __del__(self):
+        """detects deletion of rectangle"""
         Rectangle.number_of_instances -= 1
         return print('Bye Rectangle...')
