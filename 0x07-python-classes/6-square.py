@@ -53,12 +53,13 @@ class Square:
         """ prints a square of '#' """
         if self.__size == 0:
             print()
-        if (self.__position):
-            for i in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                print(' ' * self.__position[0], end='')
-                print('#' * self.__size)
         else:
-            for i in range(self.__size):
-                print('#' * self.__size)
+            if (self.__position):
+                for i in range(self.__position[1]):
+                    print()
+                for i in range(self.__size):
+                    print(' ' * self.__position[0], end='')
+                    print('#' * self.__size)
+            else:
+                for i in range(self.__size):
+                    print('#' * self.__size)
