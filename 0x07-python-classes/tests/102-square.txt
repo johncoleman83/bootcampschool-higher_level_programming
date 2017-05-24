@@ -1,1 +1,63 @@
+    4-square module
+=======================
 
+
+>>> print(__import__("102-square").Square.__doc__)
+ This is a Square Class 
+
+>>> Square = __import__('102-square').Square
+
+
+>>> s_5 = Square(5)
+
+
+>>> s_6 = Square(6)
+
+
+>>> print(s_5 < s_6)
+True
+
+>>> print(s_5 <= s_6)
+True
+
+>>> print(s_5 == s_6)
+False
+
+>>> print(s_5 != s_6)
+True
+
+>>> print(s_5 > s_6)
+False
+
+>>> print(s_5 >= s_6)
+False
+
+>>> print(s_5 < 1)
+Traceback (most recent call last):
+		  ...
+AttributeError: 'int' object has no attribute '_Square__size'
+
+>>> print(s_5 < 100)
+Traceback (most recent call last):
+		  ...
+AttributeError: 'int' object has no attribute '_Square__size'
+
+>>> print(s_5 < "hi")
+Traceback (most recent call last):
+		  ...
+AttributeError: 'str' object has no attribute '_Square__size'
+
+>>> print(1 < s_6)
+Traceback (most recent call last):
+		  ...
+AttributeError: 'int' object has no attribute '_Square__size'
+
+>>> print(100 < s_6)
+Traceback (most recent call last):
+		  ...
+AttributeError: 'int' object has no attribute '_Square__size'
+
+>>> print("hi" < s_6)
+Traceback (most recent call last):
+		  ...
+AttributeError: 'str' object has no attribute '_Square__size'
