@@ -2,8 +2,8 @@
 
 ## Description
 
-This Repo has some of my (David John Coleman II) projects for Holberton School.
-The focus of these projects are learning higher level language software
+This directory has some of my (David John Coleman II) projects for Holberton
+School.  The focus of these projects are learning higher level language software
 development in primarily python language.
 
 * __Environment:__ Ubuntu 14.04 LTS
