@@ -1,4 +1,4 @@
-# 0x08-python-more_classes
+# 0x0A-python-inheritance
 
 ## Description
 
