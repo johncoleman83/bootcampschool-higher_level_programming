@@ -18,17 +18,16 @@ class BaseGeometry:
             raise TypeError("{:} must be an integer".format(name))
         if (value <= 0):
             raise ValueError("{:} must be greater than 0".format(name))
-        return True
 
 
 class Rectangle(BaseGeometry):
     """Rectangle class inheriting from BaseGeometry class"""
     def __init__(self, width, height):
         """initializes new object of Rectangle Class"""
-        if (super().integer_validator("width", width)):
-            self.__width = width
-        if (super().integer_validator("height", height)):
-            self.__height = height
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__height = height
+        self.__width = width
 
     def area(self):
         return self.__height * self.__width
