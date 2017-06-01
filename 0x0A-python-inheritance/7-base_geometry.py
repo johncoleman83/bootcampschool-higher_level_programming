@@ -12,7 +12,6 @@ class BaseGeometry:
         """defines area of shape"""
         raise Exception("area() is not implemented")
 
-
     def integer_validator(self, name, value):
         """validates if input:value is integer"""
         if (value.__class__ != int):
