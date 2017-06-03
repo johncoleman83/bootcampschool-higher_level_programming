@@ -9,7 +9,7 @@ class Student():
 
     def to_json(self, attrs=None):
         """returns dict attributes of Student"""
-        if attrs == None:
+        if attrs is None:
             obj_dict = self.__dict__
             return obj_dict
         else:
