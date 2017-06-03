@@ -14,5 +14,5 @@ class Student():
             return obj_dict
         else:
             o_D = self.__dict__
-            D = dict(([key, val] for key, val in o_D.items() if key in attrs))
+            D = dict(([k, v] for k, v in o_D.items() if k in attrs))
             return D
