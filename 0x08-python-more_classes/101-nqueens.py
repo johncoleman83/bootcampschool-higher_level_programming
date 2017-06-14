@@ -6,7 +6,7 @@ def generate_board(n):
     board = []
     y = n - 1
     while (y >= 0):
-        row = list([x, y] for x in range(4))
+        row = list([x, y] for x in range(n))
         board.append(row)
         y -= 1
     return board
@@ -58,7 +58,7 @@ def place_queens(board):
                         positions.append(board[row][square])
                     square -= 1
             row += 1
-        if len(positions) == n:
+        if len(positions):
             copy = list(positions)
             result.append(copy)
         start += 1
@@ -75,8 +75,9 @@ def nqueens():
         print('N must be at least 4')
         return(1)
     board = generate_board(n)
+    print_matrix(board)
     result = place_queens(board)
-    print(result)
+    print_matrix(result)
 
 
 
