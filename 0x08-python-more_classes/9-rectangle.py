@@ -59,7 +59,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             for h in range(self.__height):
                 s += str(self.print_symbol * self.width) + '\n'
-        return s
+        return s[:-1]
 
     def __repr__(self):
         """returns string representation of rectangle"""
@@ -68,7 +68,7 @@ class Rectangle:
     def __del__(self):
         """detects deletion of Rectangle instance"""
         Rectangle.number_of_instances -= 1
-        return print('Bye Rectangle...')
+        return print('Bye rectangle...')
 
     def bigger_or_equal(rect_1, rect_2):
         """returns the bigger rectangle or the first, if both are equal"""

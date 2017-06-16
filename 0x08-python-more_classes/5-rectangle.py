@@ -55,7 +55,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             for h in range(self.__height):
                 s += str('#' * self.width) + '\n'
-        return s
+        return s[:-1]
 
     def __repr__(self):
         """returns string representation of rectangle"""
@@ -63,4 +63,4 @@ class Rectangle:
 
     def __del__(self):
         """detects deletion of Rectangle instance"""
-        return print('Bye Rectangle...')
+        return print('bye Rectangle...')
