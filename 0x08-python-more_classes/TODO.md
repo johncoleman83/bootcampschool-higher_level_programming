@@ -1,0 +1,1 @@
+change nQueens from storing positions in list to storing positions in dictionary
