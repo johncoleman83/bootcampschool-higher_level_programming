@@ -72,8 +72,8 @@ class Rectangle:
 
     def bigger_or_equal(rect_1, rect_2):
         """returns the bigger rectangle or the first, if both are equal"""
-        if (not isinstance(rect_1, Rectangle) or not
-            isinstance(rect_2, Rectangle)):
+        if (not isinstance(rect_1, Rectangle) or not isinstance(rect_2,
+                                                                Rectangle)):
             raise TypeError('{:} must be an instance of Rectangle'.format
                             ('rect_2' if isinstance(rect_1, Rectangle)
                              else 'rect_1'))
