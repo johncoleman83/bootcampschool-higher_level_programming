@@ -6,25 +6,31 @@ def nqueens(columns, rows):
     solutions = [[]]
     for x in range(columns):
         solutions = add_one_queen(x, rows, solutions)
+    """
     print(solutions)
+    """
     return solutions
 
 
 def add_one_queen(x, rows, prev_solutions):
-    print("add_one_queen() rows={}, x = {}, prev_sols\n{}".format(rows, x, prev_solutions))
+    """
+    print("rows={}, x = {}, prev_sols\n{}".format(rows, x, prev_solutions))
+    """
     new_solutions = []
     for arrangement in prev_solutions:
         for y in range(rows):
-            if is_safe(x, y, arrangement):
+            if y not in arrangement and is_safe(x, y, arrangement):
                 new_solutions.append(arrangement + [y])
     return new_solutions
 
 
 def is_safe(x, y, arrangement):
+    """
     print("is_safe() x: {}, y: {}, arrangement: {}".format(x, y, arrangement))
-    return all(arrangement[col] != y and
-               abs(arrangement[col] - y) != x - col
+    """
+    return all(abs(arrangement[col] - y) != x - col
                for col in range(x))
+
 
 def initiate_nqueens():
     if len(argv) > 1:
