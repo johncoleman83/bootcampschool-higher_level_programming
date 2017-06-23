@@ -9,8 +9,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Instantiation of rectangle with width and height """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
