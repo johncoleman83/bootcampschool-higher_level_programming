@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """ Rectangle Module """
 
+number_of_instances = 0
 
 class Rectangle:
     """ This is a Rectangle Class (it defines a rectangle) """
-    number_of_instances = 0
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ Instantiation of rectangle with width and height """
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
+        number_of_instances += 1
 
     @property
     def width(self):
@@ -67,7 +67,7 @@ class Rectangle:
 
     def __del__(self):
         """detects deletion of Rectangle instance"""
-        Rectangle.number_of_instances -= 1
+        number_of_instances -= 1
         return print('Bye rectangle...')
 
     def bigger_or_equal(rect_1, rect_2):
