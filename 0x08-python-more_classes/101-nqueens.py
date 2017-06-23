@@ -3,19 +3,15 @@ from sys import argv
 
 
 def nqueens(columns, rows):
+    """begins nqueens adding new y digit for each x digit"""
     solutions = [[]]
     for x in range(columns):
         solutions = add_one_queen(x, rows, solutions)
-    """
-    print(solutions)
-    """
     return solutions
 
 
 def add_one_queen(x, rows, prev_solutions):
-    """
-    print("rows={}, x = {}, prev_sols\n{}".format(rows, x, prev_solutions))
-    """
+    """ adds one queen of y digit if it is safe for every solution """
     new_solutions = []
     for arrangement in prev_solutions:
         for y in range(rows):
@@ -25,14 +21,13 @@ def add_one_queen(x, rows, prev_solutions):
 
 
 def is_safe(x, y, arrangement):
-    """
-    print("is_safe() x: {}, y: {}, arrangement: {}".format(x, y, arrangement))
-    """
+    """checks if queen is not on a diagonal"""
     return all(abs(arrangement[col] - y) != x - col
                for col in range(x))
 
 
 def initiate_nqueens():
+    """initiates nqueens checking for edge cases"""
     if len(argv) > 1:
         if argv[1].isdigit():
             n = int(argv[1])
