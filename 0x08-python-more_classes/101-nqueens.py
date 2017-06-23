@@ -28,7 +28,7 @@ def is_safe(x, y, arrangement):
 
 def initiate_nqueens():
     """initiates nqueens checking for edge cases"""
-    if len(argv) > 1:
+    if len(argv) == 2:
         if argv[1].isdigit():
             n = int(argv[1])
         else:
@@ -44,7 +44,7 @@ def initiate_nqueens():
                 formatted.append([x, y])
             print(formatted)
     else:
-        print('N must be at least 4')
+        print('Usage: nqueens N')
 
 
 if __name__ == '__main__':
