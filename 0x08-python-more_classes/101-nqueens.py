@@ -6,11 +6,11 @@ def nqueens(columns, rows):
     """begins nqueens adding new y digit for each x digit"""
     solutions = [[]]
     for x in range(columns):
-        solutions = add_one_queen(x, rows, solutions)
+        solutions = add_queens(x, rows, solutions)
     return solutions
 
 
-def add_one_queen(x, rows, prev_solutions):
+def add_queens(x, rows, prev_solutions):
     """ adds one queen of y digit if it is safe for every solution """
     new_solutions = []
     for arrangement in prev_solutions:
