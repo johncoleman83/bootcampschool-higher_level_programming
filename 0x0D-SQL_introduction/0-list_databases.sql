@@ -1,3 +1,2 @@
-# MySQL script shows databases
-# Shows all databases
+-- MySQL script shows all databases
 SHOW DATABASES;
