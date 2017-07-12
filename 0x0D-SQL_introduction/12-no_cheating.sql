@@ -1,0 +1,1 @@
+-- updates the score of Bob to 10 in table of MySQL server
