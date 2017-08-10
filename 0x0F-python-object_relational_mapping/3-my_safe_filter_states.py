@@ -17,7 +17,7 @@ def init_db():
 
 
 def parse_input(s):
-    new = []
+    """parses input removing single quotes and semicolons"""
     s = ''.join([i for i in s if i != "'" and i != ';'])
     return s
 
