@@ -5,13 +5,25 @@
 import MySQLdb
 import sys
 
-HOST = 'localhost:3306'
+HOST = 'localhost'
 UN = sys.argv[1]
 PW = sys.argv[2]
 DBNM = sys.argv[3]
-if __name__ == "__main__":
+
+
+def print_states():
+    """
+    function prints all states from input DB
+    """
     db = MySQLdb.connect(host=HOST, user=UN, passwd=PW, db=DBNM)
     cur = db.cursor()
-    cur.execute("SHOW * FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    print_states()
