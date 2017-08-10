@@ -10,6 +10,7 @@ development in primarily python language.
 
 * __OS:__ Ubuntu 14.04 LTS
 * __Language:__ Python3
+* __Style:__ PEP 8 1.7.0
 * __ORM:__ SQLAlchemy
 * __database:__ mysql
 
