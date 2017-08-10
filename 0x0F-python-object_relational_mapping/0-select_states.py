@@ -5,22 +5,19 @@
 import MySQLdb
 import sys
 
-HOST = 'localhost'
-PORT = 3306
-UN = sys.argv[1]
-PW = sys.argv[2]
-DBNM = sys.argv[3]
+
+def init_db():
+    """initializes a db with MySQLdb"""
+    db = MySQLdb.connect(host='localhost',
+                         port=3306,
+                         user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3])
+    return db
 
 
-def print_states():
-    """
-    function prints all states from input DB
-    """
-    db = MySQLdb.connect(host=HOST,
-                         port=PORT,
-                         user=UN,
-                         passwd=PW,
-                         db=DBNM)
+def print_states(db):
+    """prints all states from input DB"""
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows = cur.fetchall()
@@ -31,4 +28,4 @@ def print_states():
 
 
 if __name__ == "__main__":
-    print_states()
+    print_states(init_db())
