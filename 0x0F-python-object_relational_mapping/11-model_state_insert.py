@@ -17,14 +17,6 @@ def init_sess():
     return session
 
 
-def parse_input(s):
-    """parses input removing single quotes and semicolons"""
-    REP_CHARS = [';', "'", '"']
-    for i in REP_CHARS:
-        s = s.replace(i, '--')
-    return s
-
-
 def add_state(session):
     """adds state to the DB"""
     s = State()
