@@ -18,15 +18,14 @@ def init_sess():
     return (engine, session)
 
 
-def print_states(db):
+def print_cities(db):
     """prints all the cities from session DB"""
     session = db[1]
-    i = session.query(City, State).filter(State.id == City.state_id).\
-        order_by(City.id)
+    i = session.query(City, State).filter(State.id == City.state_id)
     for c, s in i:
         print(s.name, ': ({}) '.format(c.id), c.name, sep='')
     session.close()
     db[0].dispose()
 
 if __name__ == '__main__':
-    print_states(init_sess())
+    print_cities(init_sess())
