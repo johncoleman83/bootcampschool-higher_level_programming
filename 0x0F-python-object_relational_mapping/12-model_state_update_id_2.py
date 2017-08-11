@@ -14,15 +14,18 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
-def update_state(session):
+def update_state(db):
     """Change the name of the State where id = 2 to New Mexico"""
+    session = db[1]
     s = session.query(State).filter(State.id == 2).one()
     s.name = "New Mexico"
     session.add(s)
     session.commit()
+    session.close()
+    db[0].dispose()
 
 
 if __name__ == '__main__':

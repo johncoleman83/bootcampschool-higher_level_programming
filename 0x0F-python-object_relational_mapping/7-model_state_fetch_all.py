@@ -14,13 +14,16 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
-def print_states(session):
+def print_states(db):
     """prints all the states from session DB"""
+    session = db[1]
     for instance in session.query(State).order_by(State.id):
         print(instance.id, ': ', instance.name, sep='')
+    session.close()
+    db[0].dispose()
 
 if __name__ == '__main__':
     print_states(init_sess())

@@ -14,17 +14,20 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
-def add_state(session):
+def add_state(db):
     """adds state to the DB"""
+    session = db[1]
     s = State()
     s.name = "Louisiana"
     session.add(s)
     session.commit()
     r = session.query(State).filter(State.name == "Louisiana")
     print(r[0].id)
+    session.close()
+    db[0].dispose()
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
 def parse_input(s):
@@ -25,14 +25,17 @@ def parse_input(s):
     return s
 
 
-def print_state_name(session):
+def print_state_name(db):
     """prints the ID of input state"""
+    session = db[1]
     n = parse_input(sys.argv[4])
     r = session.query(State).filter(State.name == n)
     try:
         print(r[0].id)
     except:
         print("Not found")
+    session.close()
+    db[0].dispose()
 
 
 if __name__ == '__main__':

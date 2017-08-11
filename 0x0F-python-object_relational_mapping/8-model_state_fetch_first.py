@@ -14,16 +14,19 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
-def print_min_state(session):
+def print_min_state(db):
     """prints the state with min value using first()"""
+    session = db[1]
     instance = session.query(State).first()
     try:
         print(instance.id, ': ', instance.name, sep='')
     except:
         print("Nothing")
+    session.close()
+    db[0].dispose()
 
 
 if __name__ == '__main__':

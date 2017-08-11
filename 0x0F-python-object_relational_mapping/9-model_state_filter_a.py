@@ -14,15 +14,17 @@ def init_sess():
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    return session
+    return (engine, session)
 
 
-def print_a_states(session):
+def print_a_states(db):
     """prints all states with 'a' in the name"""
+    session = db[1]
     instances = session.query(State).filter(State.name.like('%a%'))
     for instance in instances:
         print(instance.id, ': ', instance.name, sep='')
-
+    session.close()
+    db[0].dispose()
 
 if __name__ == '__main__':
     print_a_states(init_sess())
