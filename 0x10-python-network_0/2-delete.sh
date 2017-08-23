@@ -1,2 +1,3 @@
 #!/bin/bash
-# curl body size
+# sends DELETE request with curl to input URL
+curl --request "DELETE" "$1"
