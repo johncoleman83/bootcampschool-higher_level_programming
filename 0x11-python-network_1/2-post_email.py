@@ -7,7 +7,7 @@ import urllib.parse
 import sys
 
 
-def value_request_id(the_url, the_email):
+def request_with_parameter(the_url, the_email):
     """makes a request to input URL with email as a parameter"""
     values = {'email': the_email}
     data = urllib.parse.urlencode(values)
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     """MAIN APP"""
     the_url = sys.argv[1]
     the_email = sys.argv[2]
-    value_request_id(the_url, the_email)
+    request_with_parameter(the_url, the_email)
