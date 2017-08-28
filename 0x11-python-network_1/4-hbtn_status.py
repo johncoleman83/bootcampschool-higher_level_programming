@@ -8,11 +8,10 @@ import requests
 def display_request_data(the_url):
     """makes a request to specified URL & displays data on the request"""
     r = requests.get(the_url)
-    html = r.content
+    html = r.text
     print("Body response:")
     print("    - type: {}".format(type(html)))
     print("    - content: {}".format(html))
-    print("    - utf8 content: {}".format(html.decode('utf8')))
 
 
 if __name__ == "__main__":
