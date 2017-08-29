@@ -10,9 +10,9 @@ def display_request_data(the_url):
     with urllib.request.urlopen(the_url) as response:
         html = response.read()
     print("Body response:")
-    print("    - type: {}".format(type(html)))
-    print("    - content: {}".format(html))
-    print("    - utf8 content: {}".format(html.decode('utf8')))
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
+    print("\t- utf8 content: {}".format(html.decode('utf8')))
 
 
 if __name__ == "__main__":

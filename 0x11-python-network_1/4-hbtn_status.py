@@ -10,8 +10,8 @@ def display_request_data(the_url):
     r = requests.get(the_url)
     html = r.text
     print("Body response:")
-    print("    - type: {}".format(type(html)))
-    print("    - content: {}".format(html))
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
 
 
 if __name__ == "__main__":
