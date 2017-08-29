@@ -23,8 +23,8 @@ that specifically address learning new functions and tasks in primarily python.
 
 ## Author
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 
-Public Domain, no copyright protection
+MIT License
