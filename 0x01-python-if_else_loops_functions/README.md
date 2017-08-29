@@ -30,7 +30,7 @@ development in primarily python language.
 
 ## Author
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 
