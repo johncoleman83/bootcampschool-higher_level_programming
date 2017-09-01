@@ -9,7 +9,7 @@ import sys
 def request_error_check(the_url):
     """makes a request to input URL with checks for errors"""
     r = requests.get(the_url)
-    if r.status_code > 200:
+    if r.status_code >= 400:
         print("Error code: {}".format(r.status_code))
     else:
         print("{}".format(r.text))
