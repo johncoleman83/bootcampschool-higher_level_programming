@@ -8,12 +8,11 @@ import sys
 
 def request_to_star_wars(the_url, payload):
     """makes a request to input URL with q as a parameter"""
-    r = requests.get(the_url, params=payload)
-    json = r.json()
-    count = json.get('count')
-    print("Number of result: {}".format(count))
+    res = requests.get(the_url, params=payload).json()
+    count = res.get('count')
+    print("Number of results: {}".format(count))
     if count > 0:
-        results = json.get('results')
+        results = res.get('results')
         for character in results:
             print(character.get('name'))
 

@@ -8,21 +8,21 @@ import sys
 
 def request_to_star_wars(the_url, payload):
     """makes a request to input URL with q as a parameter"""
-    r = requests.get(the_url, params=payload)
-    r_json = r.json()
+    res = requests.get(the_url, params=payload).json()
     name_list = []
-    count = r_json.get('count')
+    count = res.get('count')
     if count > 0:
-        results = r_json.get('results')
+        results = res.get('results')
         for character in results:
             name_list.append(character.get('name'))
-    while r_json.get('next'):
-        r = requests.get(r_json.get('next'))
-        r_json = r.json()
-        results = r_json.get('results')
+    next_page = res.get('next')
+    while next_page:
+        res = requests.get(next_page).json()
+        results = res.get('results')
         for character in results:
             name_list.append(character.get('name'))
-    print("Number of result: {}".format(count))
+        next_page = res.get('next')
+    print("Number of results: {}".format(count))
     for name in name_list:
         print(name)
 
