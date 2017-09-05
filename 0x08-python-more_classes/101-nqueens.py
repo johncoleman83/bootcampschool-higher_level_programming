@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from sys import argv
+import sys
 
 
 def nqueens(columns, rows):
@@ -15,37 +15,46 @@ def add_queens(x, rows, prev_solutions):
     new_solutions = []
     for arrangement in prev_solutions:
         for y in range(rows):
-            if y not in arrangement and is_safe(x, y, arrangement):
+            if is_safe(x, y, arrangement):
                 new_solutions.append(arrangement + [y])
     return new_solutions
 
 
 def is_safe(x, y, arrangement):
-    """checks if queen is not on a diagonal"""
-    return all(abs(arrangement[col] - y) != x - col
-               for col in range(x))
+    """checks if queen is unique and not on a diagonal"""
+    if y in arrangement:
+        return (False)
+    else:
+        return all(abs(arrangement[col] - y) != x - col
+                   for col in range(x))
+
+
+def check_edge_cases():
+    """checks edge based on nqueens input"""
+    if len(sys.argv) != 2:
+        print('Usage: nqueens N')
+        sys.exit(1)
+    if sys.argv[1].isdigit():
+        n = int(sys.argv[1])
+    else:
+        print('N must be a number')
+        sys.exit(1)
+    if n < 4:
+        print('N must be at least 4')
+        sys.exit(1)
+    return(n)
 
 
 def initiate_nqueens():
-    """initiates nqueens checking for edge cases"""
-    if len(argv) == 2:
-        if argv[1].isdigit():
-            n = int(argv[1])
-        else:
-            print('N must be a number')
-            return(1)
-        if n < 4:
-            print('N must be at least 4')
-            return(1)
-        solutions = nqueens(n, n)
-        for arrangement in solutions:
-            formatted = []
-            for x, y in enumerate(arrangement):
-                formatted.append([x, y])
-            print(formatted)
-    else:
-        print('Usage: nqueens N')
-
+    """initiates nqueens checking for edge cases, then builds chess board"""
+    n = check_edge_cases()
+    solutions = nqueens(n, n)
+    for arrangement in solutions:
+        formatted = []
+        for x, y in enumerate(arrangement):
+            formatted.append([x, y])
+        print(formatted)
 
 if __name__ == '__main__':
+    """MAIN APP"""
     initiate_nqueens()
