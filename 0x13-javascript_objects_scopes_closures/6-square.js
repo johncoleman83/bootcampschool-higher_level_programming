@@ -5,10 +5,10 @@ module.exports = {
   Square: Square
 };
 
-const SquareOld = require('./5-square').Square;
+const ParentSquare = require('./5-square').Square;
 
 function Square (size) {
-  SquareOld.call(this, size, size);
+  ParentSquare.call(this, size, size);
   this.charPrint = function (c) {
     if (c === undefined) {
       c = 'X';

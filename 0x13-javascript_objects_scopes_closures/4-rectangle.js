@@ -10,6 +10,7 @@ function Rectangle (w, h) {
     this.width = w;
     this.height = h;
   }
+
   this.print = function () {
     if (this.width && this.height) {
       for (let row = 0; row < this.height; row++) {
@@ -17,11 +18,13 @@ function Rectangle (w, h) {
       }
     }
   };
+
   this.rotate = function () {
     let temp = this.width;
     this.width = this.height;
     this.height = temp;
   };
+
   this.double = function () {
     this.width *= 2;
     this.height *= 2;
