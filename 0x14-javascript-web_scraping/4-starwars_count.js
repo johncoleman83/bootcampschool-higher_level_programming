@@ -9,15 +9,19 @@ request.get(url, function (error, response, body) {
   if (error) {
     console.log(error);
   }
-  if (body) {
-    body = JSON.parse(body);
-    let films = body.results;
-    for (let film = 0; film < films.length; film++) {
-      let characters = films[film].characters;
-      if (characters.indexOf(wedgeAntilles) > -1) {
-        count++;
+  if (response && body) {
+    if (response.headers['content-type'] === 'application/json') {
+      body = JSON.parse(body);
+      let films = body.results;
+      for (let film = 0; film < films.length; film++) {
+        let characters = films[film].characters;
+        if (characters) {
+          if (characters.indexOf(wedgeAntilles) > -1) {
+            count++;
+          }
+        }
       }
     }
-    console.log(count);
   }
+  console.log(count);
 });
