@@ -9,6 +9,7 @@ request(url, function (error, response, body) {
     console.log(error);
   }
   if (response) {
-    console.log(response.statusCode);
+    let code = response.statusCode;
+    console.log('code:', code);
   }
 });
