@@ -2,7 +2,7 @@
 /* 4-starwars_count.js */
 
 const request = require('request');
-const wedgeAntilles = 'https://swapi.co/api/people/18/';
+const wedgeAntilles = '18';
 let count = 0;
 let url = process.argv[2];
 request.get(url, function (error, response, body) {
@@ -12,12 +12,14 @@ request.get(url, function (error, response, body) {
   if (response && body) {
     if (response.headers['content-type'] === 'application/json') {
       body = JSON.parse(body);
-      let films = body.results;
-      for (let film = 0; film < films.length; film++) {
-        let characters = films[film].characters;
+      let results = body.results;
+      for (let result in results) {
+        let characters = results[result].characters;
         if (characters) {
-          if (characters.indexOf(wedgeAntilles) > -1) {
-            count++;
+          for (let person in characters) {
+            if (characters[person].includes(wedgeAntilles)) {
+              count++;
+            }
           }
         }
       }
