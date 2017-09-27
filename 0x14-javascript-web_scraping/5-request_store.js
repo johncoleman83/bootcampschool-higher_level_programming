@@ -7,9 +7,9 @@ const url = process.argv[2];
 const file = process.argv[3];
 request.get(url, function (error, response, body) {
   if (error) {
-    console.log(0);
+    console.log(error);
   }
-  if (response && body) {
+  if (body) {
     writeBody(body);
   }
 });
