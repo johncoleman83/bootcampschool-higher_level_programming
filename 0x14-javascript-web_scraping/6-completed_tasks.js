@@ -13,14 +13,15 @@ request.get(url, function (error, response, body) {
 
 function computeTasks (body) {
   const usersObj = Object();
-  for (let i = 1; i < 11; i++) {
-    usersObj[i.toString(10)] = 0;
-  }
   const tasksByUser = JSON.parse(body);
   for (let userTask in tasksByUser) {
     let userId = tasksByUser[userTask].userId.toString();
     if (tasksByUser[userTask].completed) {
-      usersObj[userId]++;
+      if (usersObj[userId] === undefined) {
+        usersObj[userId] = 1;
+      } else {
+        usersObj[userId]++;
+      }
     }
   }
   console.log(usersObj);
