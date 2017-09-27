@@ -8,12 +8,17 @@ const file = process.argv[3];
 request.get(url, function (error, response, body) {
   if (error) {
     console.log(error);
-  }
-  if (body) {
-    writeBody(body);
+  } else {
+    fs.writeFile(file, body, 'utf8', function (err) {
+      if (err) {
+        console.log(err);
+      }
+    });
+  // writeBody(body);
   }
 });
 
+/*
 function writeBody (body) {
   fs.writeFile(file, body, 'utf8', function (err) {
     if (err) {
@@ -21,3 +26,4 @@ function writeBody (body) {
     }
   });
 }
+*/
