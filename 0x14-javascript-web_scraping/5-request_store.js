@@ -9,16 +9,10 @@ request.get(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    fs.writeFile(file, body, 'utf8', function (err) {
-      if (err) {
-        console.log(err);
-      }
-    });
-  // writeBody(body);
+    writeBody(body);
   }
 });
 
-/*
 function writeBody (body) {
   fs.writeFile(file, body, 'utf8', function (err) {
     if (err) {
@@ -26,4 +20,3 @@ function writeBody (body) {
     }
   });
 }
-*/
