@@ -5,5 +5,4 @@ $.get('https://swapi.co/api/films/?format=json', function (data) {
   for (let i in results) {
     $('UL#list_movies').append('<LI>' + results[i].title + '</LI>');
   }
-  // $('UL#list_movies').text(data.name);
 });
