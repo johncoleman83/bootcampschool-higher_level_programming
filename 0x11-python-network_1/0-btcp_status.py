@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """
-4-hbtn_status.py
+0-btcp_status.py
 """
-import requests
+import urllib.request
 
 
 def display_request_data(the_url):
     """makes a request to specified URL & displays data on the request"""
-    r = requests.get(the_url)
-    html = r.text
+    with urllib.request.urlopen(the_url) as response:
+        html = response.read()
     print("Body response:")
     print("\t- type: {}".format(type(html)))
     print("\t- content: {}".format(html))
+    print("\t- utf8 content: {}".format(html.decode('utf8')))
 
 
 if __name__ == "__main__":
     """MAIN APP"""
-    display_request_data("https://intranet.hbtn.io/status")
+    display_request_data("https://intranet.btcp.io/status")

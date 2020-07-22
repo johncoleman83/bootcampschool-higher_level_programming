@@ -2,7 +2,7 @@
 
 ## Description
 
-This directory has some of my (David John Coleman II) projects for Holberton
+This directory has some of my (David John Coleman II) projects for Bootcamp
 School.  The focus of these projects are learning higher level language software
 development.  The focus of this project is JavaScript and NodeJS
 

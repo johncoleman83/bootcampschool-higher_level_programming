@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-str = "Holberton School"
+str = "Bootcamp School"
 print(str * 3, '\n', '{:.9}'.format(str), sep='')
